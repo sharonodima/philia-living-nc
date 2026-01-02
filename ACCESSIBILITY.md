@@ -202,8 +202,8 @@ This website is **partially conformant** with WCAG 2.1 Level AA. "Partially conf
 
 ### Feedback
 We welcome your feedback on the accessibility of Philia Living. Please contact us if you encounter accessibility barriers:
-- **Email**: accessibility@philialiving.com
-- **Phone**: (555) 123-4567
+- **Email**: odimasharon@gmail.com
+- **Phone**: (919) 703-3335
 
 We try to respond to feedback within 5 business days.
 
