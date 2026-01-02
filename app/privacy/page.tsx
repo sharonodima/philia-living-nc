@@ -32,7 +32,7 @@ export default function Privacy() {
             <h2 className="section-title">Introduction</h2>
             <div className="space-y-6 text-gray-600 leading-relaxed">
               <p>
-                At Philia Living ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                At Philia Living (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
               </p>
               <p>
                 Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access our website or use our services.
@@ -253,7 +253,7 @@ export default function Privacy() {
             {/* Children's Privacy */}
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                7. Children's Privacy
+                7. Children&apos;s Privacy
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
@@ -269,7 +269,7 @@ export default function Privacy() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.
+                  We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the &ldquo;Last Updated&rdquo; date.
                 </p>
               </div>
             </div>

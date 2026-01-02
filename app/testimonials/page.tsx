@@ -115,7 +115,7 @@ export default function Testimonials() {
 
                 {/* Testimonial Text */}
                 <p className="text-gray-600 mb-6 italic leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* Author Info */}

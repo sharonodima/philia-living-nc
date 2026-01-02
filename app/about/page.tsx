@@ -116,7 +116,7 @@ export default function About() {
                 Today, Philia Living stands as a testament to that vision. With a dedicated team of professional caregivers who bring quality care directly to your home, we continue to set the standard for in-home care services in our community.
               </p>
               <p>
-                We believe that quality care goes beyond meeting basic needs. It's about creating meaningful connections, fostering independence, and ensuring that every person we serve feels valued, respected, and supported in the place they call home.
+                We believe that quality care goes beyond meeting basic needs. It&apos;s about creating meaningful connections, fostering independence, and ensuring that every person we serve feels valued, respected, and supported in the place they call home.
               </p>
             </div>
           </div>

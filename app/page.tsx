@@ -158,7 +158,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="section-title">What Families Say</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what families have to say about our services.
+              Don&apos;t just take our word for it. Here&apos;s what families have to say about our services.
             </p>
           </div>
 
@@ -170,7 +170,7 @@ export default function Home() {
                     <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
                 <p className="font-semibold text-gray-900">- {testimonial.name}</p>
               </div>
             ))}

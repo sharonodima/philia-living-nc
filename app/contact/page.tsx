@@ -31,10 +31,10 @@ export default function Contact() {
             {/* Contact Information */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Whether you have questions about our in-home care services, want to schedule a home consultation, or would like to discuss your care needs, we'd love to hear from you. Our team is ready to help.
+                Whether you have questions about our in-home care services, want to schedule a home consultation, or would like to discuss your care needs, we&apos;d love to hear from you. Our team is ready to help.
               </p>
 
               {/* Contact Details */}
@@ -57,7 +57,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">info@philialiving.com</p>
-                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                    <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
 

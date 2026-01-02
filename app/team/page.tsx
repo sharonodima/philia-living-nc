@@ -118,7 +118,7 @@ export default function Team() {
             Interested in Joining Our Team?
           </h2>
           <p className="text-xl text-primary-50 mb-8 max-w-2xl mx-auto">
-            We're always looking for compassionate, dedicated professionals to join our mission of providing exceptional care.
+            We&apos;re always looking for compassionate, dedicated professionals to join our mission of providing exceptional care.
           </p>
           <a
             href="/contact"
