@@ -91,7 +91,7 @@ export default function Contact() {
                   Need Immediate Assistance?
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  For urgent matters or emergencies, please call our 24/7 support line at (555) 123-4567.
+                  For urgent matters or emergencies, please call our 24/7 support line at (919) 519-8477.
                 </p>
               </div>
             </div>
