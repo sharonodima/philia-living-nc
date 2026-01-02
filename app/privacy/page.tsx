@@ -288,8 +288,8 @@ export default function Privacy() {
               If you have any questions or concerns about this Privacy Policy or our data practices, please contact us.
             </p>
             <div className="space-y-4 text-lg mb-8">
-              <p><strong>Email:</strong> privacy@philialiving.com</p>
-              <p><strong>Phone:</strong> (555) 123-4567</p>
+              <p><strong>Email:</strong> marse@philialivingnc.com</p>
+              <p><strong>Phone:</strong> (919) 519-8477</p>
               <p><strong>Mail:</strong> Philia Living, North Carolina, USA</p>
             </div>
             <a

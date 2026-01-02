@@ -196,8 +196,8 @@ export default function Accessibility() {
               If you experience any difficulty accessing our website or have suggestions for improvement, please contact us. We value your feedback and are committed to providing an accessible experience for all users.
             </p>
             <div className="space-y-4 text-lg">
-              <p><strong>Email:</strong> accessibility@philialiving.com</p>
-              <p><strong>Phone:</strong> (555) 123-4567</p>
+              <p><strong>Email:</strong> marse@philialivingnc.com</p>
+              <p><strong>Phone:</strong> (919) 519-8477</p>
             </div>
             <div className="mt-8">
               <a
