@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://philialiving.com/sitemap.xml',
+    sitemap: 'https://philialivingnc.com/sitemap.xml',
   }
 }

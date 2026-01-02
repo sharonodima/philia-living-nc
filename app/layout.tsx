@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://philialiving.com'),
+  metadataBase: new URL('https://philialivingnc.com'),
   title: {
     default: "Philia Living - Quality and Affordable In-Home Health Care in North Carolina",
     template: "%s | Philia Living"
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "aging in place",
     "home health aide"
   ],
-  authors: [{ name: "Philia Living", url: "https://philialiving.com" }],
+  authors: [{ name: "Philia Living", url: "https://philialivingnc.com" }],
   creator: "Philia Living",
   publisher: "Philia Living",
   robots: {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://philialiving.com",
+    url: "https://philialivingnc.com",
     siteName: "Philia Living",
     title: "Philia Living - Quality and Affordable In-Home Health Care",
     description: "Compassionate in-home health care services throughout North Carolina. Our caregivers bring professional care directly to your home.",
@@ -70,12 +70,12 @@ export const metadata: Metadata = {
     images: ["/images/hero-bg.avif"],
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "m7mwrBboBkjdNyiI3W3nXYkaJIHTJFUsDQX6VgGMjnQ",
     // yandex: "your-yandex-verification-code",
     // bing: "your-bing-verification-code",
   },
   alternates: {
-    canonical: "https://philialiving.com",
+    canonical: "https://philialivingnc.com",
   },
   category: "Healthcare",
 };
@@ -88,19 +88,19 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "@id": "https://philialiving.com",
+    "@id": "https://philialivingnc.com",
     "name": "Philia Living",
     "alternateName": "Philia Living Homecare",
-    "url": "https://philialiving.com",
-    "logo": "https://philialiving.com/logo.png",
+    "url": "https://philialivingnc.com",
+    "logo": "https://philialivingnc.com/logo.png",
     "description": "Philia Living provides compassionate, professional in-home health care services throughout North Carolina.",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "NC",
       "addressCountry": "US"
     },
-    "telephone": "(555) 123-4567",
-    "email": "info@philialiving.com",
+    "telephone": "(919) 519-8477",
+    "email": "marse@philialivingnc.com",
     "priceRange": "$$",
     "areaServed": {
       "@type": "State",
