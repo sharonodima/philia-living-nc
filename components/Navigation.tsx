@@ -18,18 +18,18 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-secondary-50 shadow-sm sticky top-0 z-50">
+    <nav className="bg-secondary-50 shadow-sm sticky top-0 z-50" aria-label="Main navigation">
       <div className="container-custom">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" aria-label="Philia Living Homecare - Home">
             <span className="text-2xl md:text-3xl font-serif font-normal text-primary-700">
               Philia Living Homecare
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8" role="navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -45,15 +45,22 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-white transition-colors"
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div
+            id="mobile-menu"
+            className="md:hidden pb-4"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link

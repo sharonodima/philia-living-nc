@@ -10,6 +10,46 @@
   body {
     @apply bg-white text-gray-900;
   }
+
+  /* Screen reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Enhanced focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-primary-400 ring-offset-2;
+  }
+
+  /* Ensure links are clearly visible */
+  a:focus-visible {
+    @apply outline-none ring-4 ring-primary-400 ring-offset-2 rounded;
+  }
+
+  /* Button focus styles */
+  button:focus-visible {
+    @apply outline-none ring-4 ring-primary-400 ring-offset-2;
+  }
+
+  /* Input focus styles */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-4 ring-primary-400 ring-offset-2;
+  }
+
+  /* Ensure proper color contrast */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
 }
 
 @layer components {

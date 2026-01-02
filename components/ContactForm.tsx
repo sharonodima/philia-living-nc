@@ -39,10 +39,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-          Full Name *
+          Full Name <span aria-label="required">*</span>
         </label>
         <input
           type="text"
@@ -51,6 +51,7 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
+          aria-required="true"
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
           placeholder="John Doe"
         />
@@ -58,7 +59,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          Email Address *
+          Email Address <span aria-label="required">*</span>
         </label>
         <input
           type="email"
@@ -67,6 +68,7 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
+          aria-required="true"
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
           placeholder="john@example.com"
         />
@@ -74,7 +76,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-          Phone Number
+          Phone Number <span className="text-gray-500">(Optional)</span>
         </label>
         <input
           type="tel"
@@ -82,6 +84,7 @@ export default function ContactForm() {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          aria-required="false"
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
           placeholder="(555) 123-4567"
         />
@@ -89,7 +92,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Message *
+          Message <span aria-label="required">*</span>
         </label>
         <textarea
           id="message"
@@ -97,6 +100,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
+          aria-required="true"
           rows={5}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
           placeholder="Tell us how we can help you..."
@@ -104,7 +108,11 @@ export default function ContactForm() {
       </div>
 
       {submitMessage && (
-        <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+        <div
+          role="status"
+          aria-live="polite"
+          className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg"
+        >
           {submitMessage}
         </div>
       )}
@@ -112,14 +120,17 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
+        aria-disabled={isSubmitting}
         className="w-full btn-primary flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
-          'Sending...'
+          <>
+            <span aria-live="polite">Sending...</span>
+          </>
         ) : (
           <>
             Send Message
-            <Send className="ml-2" size={18} />
+            <Send className="ml-2" size={18} aria-hidden="true" />
           </>
         )}
       </button>
