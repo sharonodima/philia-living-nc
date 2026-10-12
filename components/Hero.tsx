@@ -28,10 +28,10 @@ export default function Hero({
       style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : {}}
     >
       {backgroundImage && (
-        <div className="absolute inset-0 bg-primary-900 bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-primary-900 bg-opacity-30"></div>
       )}
       <div className="container-custom relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center" style={backgroundImage ? { textShadow: '0 2px 6px rgba(0, 0, 0, 0.65)' } : undefined}>
           {subtitle && (
             <p className="text-primary-100 text-lg md:text-xl mb-4 font-medium">
               {subtitle}
@@ -49,6 +49,7 @@ export default function Hero({
             <Link
               href={ctaLink}
               className="inline-flex items-center bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+              style={{ textShadow: 'none' }}
             >
               {ctaText}
               <ArrowRight className="ml-2" size={20} />
