@@ -30,7 +30,7 @@ export default function WixHome() {
     <div className={`wix-home ${siteFonts}`}>
     <section id="about" className="wix-about wix-dark">
       <div className="wix-about-copy"><span className="wix-pill">About us</span><h2>About Philia Living</h2>
-        <p>At Philia Living, we believe that everyone deserves to live with dignity, comfort, and joy in their own home. Our mission is to provide exceptional in-home care services that enhance the quality of life for our clients and their families.</p>
+        <p>At Philia Living Homecare, we are committed to providing compassionate, high-quality home health care services to individuals and families in need. Our mission is to enhance the lives of our clients by offering personalized care and support in the comfort and familiarity of their own homes.</p>
         <p>With years of experience and a dedicated team of professional caregivers, we bring personalized care directly to your home. Our caregivers visit clients in their homes, providing compassionate support in a familiar, comfortable environment. We treat every client as family.</p></div>
       <div className="wix-about-collage">
         <Image src="/images/elder-woman-caretaker.avif" alt="An elderly woman receiving supportive care" width={300} height={300} className="wix-collage-top" />
@@ -49,10 +49,10 @@ export default function WixHome() {
       {benefits.map(benefit => <BenefitCard key={benefit.title} {...benefit} />)}
     </section>
     <section id="team" className="wix-team">
-      <div className="wix-team-intro"><h2>MEET THE TEAM</h2><p className="wix-team-subtitle">The Heart of Our Care</p>
+      <div className="wix-team-intro"><span className="wix-pill wix-pill-dark">Meet the Team</span><h2>The Heart of Our Care</h2>
         <p>Our dedicated care team at Philia Home Care consists of skilled and compassionate professionals who are committed to providing the highest quality of care to our clients. Each member of our team undergoes rigorous training and brings a wealth of experience to ensure the well-being and comfort of those we serve.</p></div>
       {teamMembers.map(member => <article className="wix-profile" key={member.name}>
-        <div className="wix-profile-photo"><Image src={member.image} alt={member.name} fill sizes="(max-width: 700px) 100vw, 50vw" /></div>
+        <div className={`wix-profile-photo${member.name === 'Sharon Odima' ? ' wix-profile-photo-sharon' : ''}`}><Image src={member.image} alt={member.name} width={member.name === 'Sharon Odima' ? 855 : 250} height={member.name === 'Sharon Odima' ? 1280 : 250} sizes="(max-width: 700px) 100vw, 50vw" /></div>
         <div className="wix-profile-copy wix-dark"><h3>{member.name}</h3><p>{member.role}</p></div>
       </article>)}
     </section>
