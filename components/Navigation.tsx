@@ -18,12 +18,12 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-secondary-50 shadow-sm sticky top-0 z-50" aria-label="Main navigation">
+    <nav className="bg-[#e5f3d5] shadow-sm sticky top-0 z-50" aria-label="Main navigation">
       <div className="container-custom">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="Philia Living Homecare - Home">
-            <span className="whitespace-nowrap text-xl sm:text-2xl xl:text-3xl font-serif font-normal text-[#e5f3d5]">
+            <span className="whitespace-nowrap text-xl sm:text-2xl xl:text-3xl font-serif font-normal text-[#275f49]">
               Philia Living Homecare
             </span>
           </Link>
@@ -34,7 +34,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[#e5f3d5] hover:text-primary-600 font-medium transition-colors duration-200"
+                className="text-[#275f49] hover:text-primary-600 font-medium transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -44,7 +44,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-[#e5f3d5] hover:text-primary-600 hover:bg-white transition-colors"
+            className="lg:hidden p-2 rounded-md text-[#275f49] hover:text-primary-600 hover:bg-white transition-colors"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -66,7 +66,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[#e5f3d5] hover:text-primary-600 font-medium py-2 px-4 rounded-md hover:bg-white transition-colors duration-200"
+                  className="text-[#275f49] hover:text-primary-600 font-medium py-2 px-4 rounded-md hover:bg-white transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
