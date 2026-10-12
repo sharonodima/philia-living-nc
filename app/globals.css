@@ -29,7 +29,7 @@
 .wix-services-grid h3::before { content: ''; width: 13px; height: 13px; border-radius: 50%; background: #275f49; position: absolute; left: 0; top: 17px; }
 .wix-services-grid p { padding-left: 24px; }
 .wix-benefits { padding-top: 72px; padding-bottom: 70px; }
-.wix-benefits-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; margin-bottom: 50px; }
+.wix-benefits-intro { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 850px; margin: 0 auto 50px; text-align: center; }
 .wix-benefits-intro h2 { margin-top: 24px; }
 .wix-benefit-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; min-height: 330px; text-align: center; }
 .wix-benefit-row:nth-child(odd) .wix-benefit-art { order: 2; }
