@@ -9,6 +9,7 @@ interface HeroProps {
   ctaLink?: string;
   backgroundClass?: string;
   backgroundImage?: string;
+  titleColor?: string;
 }
 
 export default function Hero({
@@ -19,6 +20,7 @@ export default function Hero({
   ctaLink,
   backgroundClass = 'bg-gradient-to-r from-primary-600 to-primary-800',
   backgroundImage,
+  titleColor,
 }: HeroProps) {
   return (
     <section
@@ -35,7 +37,7 @@ export default function Hero({
               {subtitle}
             </p>
           )}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal mb-6 leading-tight" style={titleColor ? { color: titleColor } : undefined}>
             {title}
           </h1>
           {description && (

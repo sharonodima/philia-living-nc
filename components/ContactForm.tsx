@@ -1,139 +1,24 @@
-'use client';
-
+ 'use client';
 import { useState } from 'react';
-import { Send } from 'lucide-react';
-
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setSubmitMessage('Thank you! Your message has been sent successfully.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-    setIsSubmitting(false);
-
-    // Clear success message after 5 seconds
-    setTimeout(() => setSubmitMessage(''), 5000);
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-          Full Name <span aria-label="required">*</span>
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          aria-required="true"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-          placeholder="John Doe"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          Email Address <span aria-label="required">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          aria-required="true"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-          placeholder="john@example.com"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-          Phone Number <span className="text-gray-500">(Optional)</span>
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          aria-required="false"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-          placeholder="(919) 519-8477"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Message <span aria-label="required">*</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          aria-required="true"
-          rows={5}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
-          placeholder="Tell us how we can help you..."
-        />
-      </div>
-
-      {submitMessage && (
-        <div
-          role="status"
-          aria-live="polite"
-          className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg"
-        >
-          {submitMessage}
-        </div>
-      )}
-
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        aria-disabled={isSubmitting}
-        className="w-full btn-primary flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? (
-          <>
-            <span aria-live="polite">Sending...</span>
-          </>
-        ) : (
-          <>
-            Send Message
-            <Send className="ml-2" size={18} aria-hidden="true" />
-          </>
-        )}
-      </button>
-    </form>
-  );
+  const [notice, setNotice] = useState('');
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const body = `Name: ${data.get('firstName')} ${data.get('lastName')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`;
+    window.location.href = `mailto:marse@philialivingnc.com?subject=${encodeURIComponent('Home care inquiry')}&body=${encodeURIComponent(body)}`;
+    setNotice('Your email app will open with your message. Please send it there, or email marse@philialivingnc.com directly.');
+  }
+  const inputClass = 'w-full px-4 py-3 border border-gray-300 rounded-lg';
+  return <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div><label htmlFor="firstName" className="block mb-2 text-sm">First Name</label><input id="firstName" name="firstName" autoComplete="given-name" className={inputClass} /></div>
+      <div><label htmlFor="lastName" className="block mb-2 text-sm">Last name</label><input id="lastName" name="lastName" autoComplete="family-name" className={inputClass} /></div>
+    </div>
+    <div><label htmlFor="email" className="block mb-2 text-sm">Email *</label><input id="email" name="email" type="email" required autoComplete="email" className={inputClass} /></div>
+    <div><label htmlFor="message" className="block mb-2 text-sm">Message</label><textarea id="message" name="message" rows={6} className={inputClass} /></div>
+    <p className="text-sm">Opens your email app to send your message.</p>
+    <button type="submit" className="w-full btn-primary">Send</button>
+    {notice && <p role="status" className="text-sm">{notice}</p>}
+  </form>;
 }

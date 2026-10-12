@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
-import { User } from 'lucide-react';
+import Image from 'next/image';
+import { teamMembers } from '@/data/people';
 
 export const metadata = {
   title: 'Meet the Team - Philia Living',
@@ -7,38 +8,6 @@ export const metadata = {
 };
 
 export default function Team() {
-  const teamMembers = [
-    {
-      name: 'Dr. Sarah Mitchell',
-      role: 'Medical Director',
-      bio: 'Board-certified physician with over 20 years of experience in geriatric care and patient wellness.',
-    },
-    {
-      name: 'James Anderson',
-      role: 'Director of Nursing',
-      bio: 'Registered nurse with extensive experience in long-term care management and staff development.',
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Care Coordinator',
-      bio: 'Passionate about creating personalized care plans that honor individual needs and preferences.',
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Activities Director',
-      bio: 'Dedicated to enriching lives through engaging programs, events, and meaningful activities.',
-    },
-    {
-      name: 'Lisa Thompson',
-      role: 'Wellness Coordinator',
-      bio: 'Specializes in health promotion, fitness programs, and holistic wellness approaches.',
-    },
-    {
-      name: 'David Williams',
-      role: 'Family Liaison',
-      bio: 'Ensures open communication and strong partnerships between families and our care team.',
-    },
-  ];
 
   return (
     <>
@@ -59,17 +28,16 @@ export default function Team() {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {teamMembers.map((member, index) => (
               <div key={index} className="card text-center">
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full mb-6">
-                  <User size={48} className="text-primary-600" />
+                <div className="relative w-48 h-56 mx-auto mb-6 overflow-hidden rounded-2xl">
+                  <Image src={member.image} alt={member.name} fill sizes="192px" className="object-cover" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-1">
                   {member.name}
                 </h3>
                 <p className="text-primary-600 font-medium mb-4">{member.role}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>

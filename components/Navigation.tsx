@@ -9,12 +9,12 @@ export default function Navigation() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/benefits', label: 'Benefits' },
-    { href: '/team', label: 'Meet the Team' },
-    { href: '/testimonials', label: 'Testimonials' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/#about', label: 'About' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#benefits', label: 'Benefits' },
+    { href: '/#team', label: 'Meet the Team' },
+    { href: '/#testimonials', label: 'Testimonials' },
+    { href: '/#contact', label: 'Contact' },
   ];
 
   return (
@@ -23,18 +23,18 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="Philia Living Homecare - Home">
-            <span className="text-2xl md:text-3xl font-serif font-normal text-primary-700">
+            <span className="whitespace-nowrap text-xl sm:text-2xl xl:text-3xl font-serif font-normal text-[#e5f3d5]">
               Philia Living Homecare
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8" role="navigation">
+          <div className="hidden lg:flex whitespace-nowrap items-center space-x-5 xl:space-x-8" role="navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                className="text-[#e5f3d5] hover:text-primary-600 font-medium transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -44,7 +44,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-white transition-colors"
+            className="lg:hidden p-2 rounded-md text-[#e5f3d5] hover:text-primary-600 hover:bg-white transition-colors"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -57,7 +57,7 @@ export default function Navigation() {
         {isOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden pb-4"
+            className="lg:hidden pb-4"
             role="navigation"
             aria-label="Mobile navigation"
           >
@@ -66,7 +66,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium py-2 px-4 rounded-md hover:bg-white transition-colors duration-200"
+                  className="text-[#e5f3d5] hover:text-primary-600 font-medium py-2 px-4 rounded-md hover:bg-white transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

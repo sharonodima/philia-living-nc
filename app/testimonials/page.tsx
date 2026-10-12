@@ -1,5 +1,7 @@
+import { testimonials } from '@/data/people';
 import Hero from '@/components/Hero';
-import { Star, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Testimonials - Philia Living',
@@ -7,71 +9,6 @@ export const metadata = {
 };
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      relation: 'Daughter of Client',
-      rating: 5,
-      text: 'The in-home care my mother receives from Philia Living is outstanding. The caregivers truly go above and beyond to ensure her comfort and happiness. I have complete peace of mind knowing she\'s cared for in her own home.',
-      date: 'December 2024',
-    },
-    {
-      name: 'Michael Davis',
-      relation: 'Son of Client',
-      rating: 5,
-      text: 'Professional, compassionate, and reliable. We could not ask for better in-home care for my father. The caregivers communicate regularly and treat him with dignity and respect in his own home. Highly recommend!',
-      date: 'November 2024',
-    },
-    {
-      name: 'Emily Thompson',
-      relation: 'Family Member',
-      rating: 5,
-      text: 'Philia Living has given our family peace of mind during a difficult time. The personalized in-home care plan and compassionate caregivers have made all the difference. Mom is so much happier at home.',
-      date: 'November 2024',
-    },
-    {
-      name: 'Robert Martinez',
-      relation: 'Spouse of Client',
-      rating: 5,
-      text: 'From the initial home consultation to daily care visits, everything has been exceptional. The caregivers are knowledgeable, caring, and always reliable. My wife is thriving with in-home care.',
-      date: 'October 2024',
-    },
-    {
-      name: 'Jennifer Lee',
-      relation: 'Daughter of Client',
-      rating: 5,
-      text: 'The companionship and engaging activities the caregivers provide keep my mom happy at home. The care team is attentive and responsive. We are so grateful for Philia Living.',
-      date: 'October 2024',
-    },
-    {
-      name: 'David Wilson',
-      relation: 'Son of Client',
-      rating: 5,
-      text: 'Choosing Philia Living for in-home care was the best decision for our family. The level of care, professionalism, and genuine compassion shown by all caregivers is remarkable.',
-      date: 'September 2024',
-    },
-    {
-      name: 'Amanda Brown',
-      relation: 'Family Member',
-      rating: 5,
-      text: 'The caregivers at Philia Living treat every client like family. My grandfather loves having them visit, and we can see the positive impact on his well-being. Excellent in-home care service!',
-      date: 'September 2024',
-    },
-    {
-      name: 'Christopher Taylor',
-      relation: 'Son of Client',
-      rating: 5,
-      text: 'Outstanding in-home care with compassionate caregivers. They are professional and kind, and they keep us informed about my mother\'s care. We highly recommend Philia Living.',
-      date: 'August 2024',
-    },
-    {
-      name: 'Patricia Anderson',
-      relation: 'Daughter of Client',
-      rating: 5,
-      text: 'My father has received in-home care for over a year now, and we continue to be impressed with the quality. The caregivers are amazing, and Dad is so happy to stay in his own home.',
-      date: 'August 2024',
-    },
-  ];
 
   return (
     <>
@@ -102,16 +39,7 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="card">
-                {/* Rating */}
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={20}
-                      className="fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
+                <Image src={testimonial.image} alt={testimonial.name} width={88} height={88} className="w-20 h-20 rounded-full object-cover mb-4" />
 
                 {/* Testimonial Text */}
                 <p className="text-gray-600 mb-6 italic leading-relaxed">
@@ -121,8 +49,6 @@ export default function Testimonials() {
                 {/* Author Info */}
                 <div className="border-t border-gray-200 pt-4">
                   <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.relation}</p>
-                  <p className="text-xs text-gray-400 mt-1">{testimonial.date}</p>
                 </div>
               </div>
             ))}
