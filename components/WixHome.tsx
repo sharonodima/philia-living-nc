@@ -29,8 +29,9 @@ export default function WixHome() {
     />
     <div className={`wix-home ${siteFonts}`}>
     <section id="about" className="wix-about wix-dark">
-      <div className="wix-about-copy"><span className="wix-pill">About us</span><h2>Passion-Driven Care, Delivered to Your Door</h2>
-        <p>We strive to deliver exceptional home health care services tailored to meet your specific needs. Our experienced team of professionals provides compassionate and reliable care to enhance your quality of life and promote independence.</p></div>
+      <div className="wix-about-copy"><span className="wix-pill">About us</span><h2>About Philia Living</h2>
+        <p>At Philia Living, we believe that everyone deserves to live with dignity, comfort, and joy in their own home. Our mission is to provide exceptional in-home care services that enhance the quality of life for our clients and their families.</p>
+        <p>With years of experience and a dedicated team of professional caregivers, we bring personalized care directly to your home. Our caregivers visit clients in their homes, providing compassionate support in a familiar, comfortable environment. We treat every client as family.</p></div>
       <div className="wix-about-collage">
         <Image src="/images/elder-woman-caretaker.avif" alt="An elderly woman receiving supportive care" width={300} height={300} className="wix-collage-top" />
         <Image src="/images/reading-braille-doctor.avif" alt="A caregiver supporting a client" width={300} height={300} className="wix-collage-left" />
