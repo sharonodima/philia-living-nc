@@ -8,7 +8,8 @@
 .wix-home h1, .wix-home h2, .wix-home h3, .wix-footer p { font-family: var(--wix-display), Georgia, serif; font-weight: 400; }
 .wix-home section { scroll-margin-top: 100px; }
 .wix-home p { font-size: 16px; line-height: 1.8; }
-.wix-home h2 { font-size: clamp(38px, 5.1vw, 64px); line-height: 1.08; }
+.wix-home h2 { font-size: clamp(38px, 5.1vw, 64px); line-height: 1.08; text-align: center; }
+.wix-services > .wix-pill, .wix-testimonials > .wix-pill { display: table; margin-left: auto; margin-right: auto; }
 .wix-home h3 { font-size: clamp(30px, 3.3vw, 42px); line-height: 1.2; }
 .wix-pill { display: inline-block; padding: 5px 20px; border-radius: 999px; font-size: 16px; line-height: 1.4; color: #275f49; background: #f3f2ec; font-weight: 400; }
 .wix-pill-dark { background: #275f49; color: #f3f2ec; }
