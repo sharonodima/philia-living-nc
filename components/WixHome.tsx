@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { HeartHandshake, HandHeart, ShieldCheck } from 'lucide-react';
+import BenefitCard from './BenefitCard';
 import { teamMembers, testimonials } from '@/data/people';
 import { siteFonts } from './SiteFonts';
 import ContactForm from './ContactForm';
@@ -11,9 +11,9 @@ const services = [
   { title: 'Therapy Services', description: 'Rehabilitation and Support', image: '/images/therapy-services.jpg' },
 ];
 const benefits = [
-  { title: 'Compassionate Care', icon: HeartHandshake, text: 'Our dedicated caregivers provide compassionate support and assistance, ensuring you receive the care and attention you deserve. We focus on building strong relationships with our clients to promote trust and well-being.' },
-  { title: 'Professional Team', icon: HandHeart, text: 'Our experienced team of skilled nurses and therapists deliver high-quality care services to meet your health and wellness goals. We are dedicated to ensuring the best possible outcomes for our clients through expertise and commitment.' },
-  { title: 'Personalized Approach', icon: ShieldCheck, text: 'We believe in a personalized approach to care, tailoring our services to your unique needs and preferences. Our goal is to empower you to live your best life with the support and assistance you need.' },
+  { title: 'Compassionate Care', image: '/images/compassionate-care.svg', tone: 'lavender', text: 'Our dedicated caregivers provide compassionate support and assistance, ensuring you receive the care and attention you deserve. We focus on building strong relationships with our clients to promote trust and well-being.' },
+  { title: 'Professional Team', image: '/images/professional-team.svg', tone: 'green', text: 'Our experienced team of skilled nurses and therapists deliver high-quality care services to meet your health and wellness goals. We are dedicated to ensuring the best possible outcomes for our clients through expertise and commitment.' },
+  { title: 'Personalized Approach', image: '/images/personalized-approach.svg', tone: 'cream', text: 'We believe in a personalized approach to care, tailoring our services to your unique needs and preferences. Our goal is to empower you to live your best life with the support and assistance you need.' },
 ];
 
 export default function WixHome() {
@@ -46,9 +46,7 @@ export default function WixHome() {
     <section id="benefits" className="wix-benefits wix-dark wix-section">
       <div className="wix-benefits-intro"><div><span className="wix-pill">Benefits</span><h2>Why We Stand Out</h2></div>
         <p>At Philia Living Homecare, we prioritize patient well-being and offer personalized care plans to meet individual needs. Our team of skilled professionals ensures your comfort and safety at all times, providing reliable and compassionate support.</p></div>
-      {benefits.map(benefit => <article className="wix-benefit-row" key={benefit.title}>
-        <div className="wix-benefit-art"><benefit.icon size={160} strokeWidth={1} aria-hidden="true" /></div><div><h3>{benefit.title}</h3><p>{benefit.text}</p></div>
-      </article>)}
+      {benefits.map(benefit => <BenefitCard key={benefit.title} {...benefit} />)}
     </section>
     <section id="team" className="wix-team">
       <div className="wix-team-intro"><h2>MEET THE TEAM</h2><p className="wix-team-subtitle">The Heart of Our Care</p>

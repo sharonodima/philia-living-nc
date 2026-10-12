@@ -27,13 +27,38 @@
 .wix-services-grid h3 { font-size: 36px; margin: 26px 0 10px; padding-left: 24px; position: relative; }
 .wix-services-grid h3::before { content: ''; width: 13px; height: 13px; border-radius: 50%; background: #275f49; position: absolute; left: 0; top: 17px; }
 .wix-services-grid p { padding-left: 24px; }
-.wix-benefits { padding-top: 72px; padding-bottom: 70px; }
+.wix-benefits { overflow: hidden; padding-top: 72px; padding-bottom: 70px; }
 .wix-benefits-intro { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 850px; margin: 0 auto 50px; text-align: center; }
 .wix-benefits-intro h2 { margin-top: 24px; }
-.wix-benefit-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; min-height: 330px; text-align: center; }
+.wix-benefit-row { display: grid; grid-template-columns: 24% 68%; gap: 8%; align-items: center; min-height: 330px; margin: 36px 0; text-align: center; }
+.wix-benefit-row:nth-child(odd) { grid-template-columns: 68% 24%; }
 .wix-benefit-row:nth-child(odd) .wix-benefit-art { order: 2; }
 .wix-benefit-row h3 { margin-bottom: 25px; }
 .wix-benefit-art { display: flex; align-items: center; justify-content: center; }
+.wix-benefit-lavender { --benefit-color: #dcd9fe; }
+.wix-benefit-green { --benefit-color: #e4f2d4; }
+.wix-benefit-cream { --benefit-color: #f3f2ed; }
+.wix-benefit-circle { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 160px; height: 160px; border-radius: 50%; background: var(--benefit-color); }
+.wix-benefit-circle img { width: 100px; height: 83px; }
+.wix-benefit-cream .wix-benefit-circle img { height: 69px; }
+.wix-benefit-panel { background: var(--benefit-color); color: #275f49; border-radius: 50px; padding: 48px 60px; min-height: 312px; display: flex; flex-direction: column; justify-content: center; }
+.wix-benefit-row[data-visible="true"] .wix-benefit-circle { animation: benefit-bobble 1.8s cubic-bezier(.22,.61,.36,1) both; }
+.wix-benefit-row[data-visible="true"] .wix-benefit-panel { animation: benefit-panel-bounce 1.5s cubic-bezier(.22,.61,.36,1) both; }
+.wix-benefit-row:nth-child(odd) { --benefit-entry-x: -100px; }
+.wix-benefit-row:nth-child(even) { --benefit-entry-x: 100px; }
+@keyframes benefit-bobble {
+  0% { transform: perspective(400px) translateY(144px) rotateX(10deg) rotateY(-25deg) rotateZ(25deg); }
+  55% { transform: perspective(400px) translateY(-18px) rotateX(-4deg) rotateY(6deg) rotateZ(-6deg); }
+  78% { transform: perspective(400px) translateY(7px) rotateZ(3deg); }
+  92% { transform: translateY(-3px) rotateZ(-1deg); }
+  100% { transform: none; }
+}
+@keyframes benefit-panel-bounce {
+  0% { transform: translate(var(--benefit-entry-x), 60px); }
+  60% { transform: translate(0, -10px); }
+  80% { transform: translate(0, 4px); }
+  100% { transform: none; }
+}
 .wix-team-intro { text-align: center; padding: 56px 10% 48px; }
 .wix-team-intro h2 { font-size: 22px; }
 .wix-team-subtitle { margin: 15px 0 12px; }
@@ -88,6 +113,7 @@
   .wix-benefits-intro { grid-template-columns: 1fr; gap: 24px; text-align: center; }
   .wix-benefit-row { display: flex; flex-direction: column; gap: 28px; padding: 30px 0; }
   .wix-benefit-row:nth-child(odd) .wix-benefit-art { order: 0; }
+  .wix-benefit-panel { min-height: 0; padding: 36px 24px; width: 100%; }
   .wix-profile { display: flex; flex-direction: column; min-height: 0; }
   .wix-profile-photo { width: 100%; min-height: 480px; }
   .wix-profile:nth-child(odd) .wix-profile-photo { order: 0; }
@@ -102,6 +128,10 @@
   .wix-back-top { width: 44px; height: 44px; line-height: 40px; right: 16px; bottom: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+@media (prefers-reduced-motion: reduce) {
+  .wix-benefit-row[data-visible="true"] .wix-benefit-circle,
+  .wix-benefit-row[data-visible="true"] .wix-benefit-panel { animation: none; }
+}
 
 @layer base {
   html {
