@@ -18,6 +18,22 @@ const benefits = [
 
 export default function WixHome() {
   return <>
+    <section className={`wix-quick-contact ${siteFonts}`} aria-labelledby="quick-contact-title">
+      <div className="wix-quick-contact-inner">
+        <Image src="/images/marselline-contact.jpg" alt="Marselline Holley" width={180} height={200} priority className="wix-quick-contact-photo" />
+        <div className="wix-quick-contact-copy">
+          <a href="#contact" className="wix-pill wix-pill-dark">Contact us</a>
+          <h2 id="quick-contact-title">Let’s talk about your care</h2>
+          <p>Marselline Holley · CEO</p>
+          <p>Personalized home care in North Carolina. Reach out to get started.</p>
+        </div>
+        <div className="wix-quick-contact-actions">
+          <a href="tel:9195198477" className="wix-quick-contact-call">Call (919) 519-8477</a>
+          <a href="mailto:marse@philialivingnc.com">marse@philialivingnc.com</a>
+          <a href="#contact" className="wix-quick-contact-message">Send a message →</a>
+        </div>
+      </div>
+    </section>
     <Hero
       title="Let's Talk About Aging With Love!"
       subtitle="Quality and Affordable In-Home Health Care"

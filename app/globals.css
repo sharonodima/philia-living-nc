@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 /* Wix reference: cream canvas, pale green panels, and display typography. */
+.wix-quick-contact { background: #f3f2ec; color: #275f49; font-family: var(--wix-body), sans-serif; padding: 32px 6%; }
+.wix-quick-contact-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; align-items: center; gap: 32px; }
+.wix-quick-contact-photo { display: block; width: 150px; height: 175px; object-fit: cover; object-position: center top; border-radius: 24px; }
+.wix-quick-contact-copy h2 { font-family: var(--wix-display), Georgia, serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; margin: 14px 0 10px; }
+.wix-quick-contact-copy p { line-height: 1.6; margin-top: 6px; }
+.wix-quick-contact-actions { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.wix-quick-contact-call { background: #275f49; color: #e5f3d5; border-radius: 999px; padding: 14px 24px; font-weight: 500; }
+.wix-quick-contact-message { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 950px) {
+  .wix-quick-contact-inner { grid-template-columns: 130px minmax(0, 1fr); gap: 24px; }
+  .wix-quick-contact-photo { width: 130px; height: 155px; }
+  .wix-quick-contact-actions { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 550px) {
+  .wix-quick-contact-inner { display: flex; flex-direction: column; text-align: center; gap: 20px; }
+  .wix-quick-contact-actions { flex-direction: column; width: 100%; }
+}
 .wix-home, .wix-footer { color: #275f49; font-family: var(--wix-body), sans-serif; font-weight: 300; }
 .wix-home { background: #f3f2ec; }
 .wix-home h1, .wix-home h2, .wix-home h3, .wix-footer p { font-family: var(--wix-display), Georgia, serif; font-weight: 400; }
